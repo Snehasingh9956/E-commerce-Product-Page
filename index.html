@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Product Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+  <!-- Cart Icon with Counter -->
+  <div class="fixed top-4 right-4 bg-blue-500 text-white rounded-full p-4 shadow-lg">
+    <a href="checkout.html">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cartCount" class="ml-2 text-lg">0</span>
+    </a>
+  </div>
+
+  <!-- Product Page -->
+  <div class="container mx-auto p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Product Image -->
+      <div class="flex justify-center items-center">
+        <img id="productImage" src="https://via.placeholder.com/400x400" alt="Product" class="w-full h-auto rounded-lg shadow-lg">
+      </div>
+
+      <!-- Product Details -->
+      <div>
+        <h1 class="text-3xl font-semibold text-gray-800">Amazing Product</h1>
+        <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+
+        <div class="mt-4">
+          <span class="text-2xl font-bold text-gray-900">$99.99</span>
+        </div>
+
+        <!-- Product Variants (Size and Color) -->
+        <div class="mt-4">
+          <label for="size" class="block text-sm font-medium text-gray-700">Size</label>
+          <select id="size" class="w-full px-3 py-2 border rounded-lg">
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+          </select>
+        </div>
+        
+        <div class="mt-4">
+          <label for="color" class="block text-sm font-medium text-gray-700">Color</label>
+          <select id="color" class="w-full px-3 py-2 border rounded-lg">
+            <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
+            <option value="Green">Green</option>
+          </select>
+        </div>
+
+        <!-- Add to Cart Button -->
+        <button id="addToCartBtn" class="mt-6 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-200">
+          Add to Cart
+        </button>
+
+        <!-- Cart Notification -->
+        <div id="cartNotification" class="mt-4 text-green-600 hidden">
+          <p>Product added to cart!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
