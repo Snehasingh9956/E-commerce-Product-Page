@@ -1,5 +1,8 @@
-let cart = []; // Array to hold cart items
-let cartCount = 0; // Cart item count
+let cart = JSON.parse(localStorage.getItem('cart')) || []; // Retrieve cart from localStorage
+let cartCount = cart.length; // Cart item count
+
+// Update cart count display on page load
+document.getElementById('cartCount').textContent = cartCount;
 
 // Event listener for "Add to Cart" button
 document.getElementById('addToCartBtn').addEventListener('click', function () {
@@ -15,6 +18,9 @@ document.getElementById('addToCartBtn').addEventListener('click', function () {
   // Add product to cart
   cart.push(product);
   cartCount++;
+
+  // Update localStorage
+  localStorage.setItem('cart', JSON.stringify(cart));
 
   // Update cart count display
   document.getElementById('cartCount').textContent = cartCount;
